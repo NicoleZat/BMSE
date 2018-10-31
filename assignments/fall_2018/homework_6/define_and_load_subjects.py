@@ -29,16 +29,16 @@ class Subject:
 
 	def get_x_status(self):
 		return self.x_status
-
-    @staticmethod
-    def load_file(file_name):
+	
+	@staticmethod
+	def load_file(file_name):
         # todo: doc string
-        subjects = []
+		subjects = []
         # todo: catch exceptions
-        data = pandas.read_table(file_name, sep='\t', lineterminator ='\r')
-        for row in range(1, len(data)):
-            subject_entry = data.iloc[row,:]
-            # todo: error checking
-            subjects.append(Subject(subject_entry[0],
-                Gender[subject_entry[1]], subject_entry[2], XStatus[subject_entry[3]]))
-        return subjects
+        	data = pandas.read_table(file_name, sep='\t', lineterminator ='\r')
+        	for row in range(1, len(data)):
+            		subject_entry = data.iloc[row,:]
+         # todo: error checking
+            		subjects.append(Subject(subject_entry[0],
+                	Gender[subject_entry[1]], subject_entry[2], XStatus[subject_entry[3]]))
+        	return subjects
